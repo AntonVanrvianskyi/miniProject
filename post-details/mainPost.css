@@ -1,19 +1,19 @@
 body{
-    margin: 0px;
+    margin: 0;
+    background-color: #d9cfbe;
 }
 .wrapper{
-
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    background-color: #d9cfbe;
+    align-items: center;
 }
 .post-info{
     background-color: #fff;
     box-sizing: border-box;
     padding: 15px;
-    width: 50%;
+    width: 60%;
+    height: 300px;
    border: 4px solid #b98484;
     display: flex;
     flex-direction: column;
@@ -21,7 +21,9 @@ body{
     align-items: center;
     border-radius: 10px;
 }
+
 .div-comment{
+    padding: 20px 30px 20px 30px;
     box-sizing: border-box;
     width: 600px;
     height: 280px;
@@ -35,5 +37,5 @@ body{
     margin: 10px;
 }
 .div-comment>p{
-    margin: 0px;
+    margin: 5px;
 }

@@ -1,26 +1,20 @@
-// На странице user-details.html:
-// 4 Вивести всю, без виключення, інформацію про об'єкт user на який клікнули
-// 5 Додати кнопку "post of current user", при кліку на яку, з'являються title всіх постів поточного юзера
-// (для получения постов используйте эндпоинт https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-//     6 Каждому посту додати кнопку/посилання, при кліку на яку відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
-
-
 function renderUserInfo(object) {
     const wrapper = document.createElement('div');
-    wrapper.classList.add('wrapper');
-    // let count = 0;
+
     Object.keys(object).forEach(key =>{
         const item = document.createElement('div');
-        item.classList.add('item');
-        // item.setAttribute('id',count+=2)
+
         if (typeof object[key] === 'object'){
 
-            // wrapper.setAttribute('id','address')
+            item.innerHTML = `<div class = 'road'>${key}:</div>`;
+            item.classList.add('object-key')
             item.append(renderUserInfo(object[key]));
 
+
         }else {
-            // item.setAttribute('id',count+=1)
-            item.innerText = `${key}: ${object[key]}`
+
+            item.classList.add('item');
+            item.innerHTML = `<b>${key}</b>: ${object[key]}`
 
         }
         wrapper.append(item)
@@ -55,7 +49,9 @@ function renderUserInfo(object) {
                         .then(response=>{
                             const headTitleDiv = document.createElement('div');
                             headTitleDiv.classList.add('headTitleDiv')
-                            const userTitle = response.map(post =>{
+
+                                response.map(post =>{
+
                                 const titleDiv = document.createElement('div');
                                 titleDiv.setAttribute('class','titleDiv')
                                 const aPost = document.createElement('a');
@@ -64,9 +60,9 @@ function renderUserInfo(object) {
                                 link.classList.add('link-block-user');
                                 aPost.href = '/miniProject/post-details/post.html?post='+JSON.stringify(post);
                                 aPost.setAttribute('target', '_blank');
-                                aPost.innerText = 'post-detailes';
+                                aPost.innerText = 'post-details';
                                 link.append(aPost)
-                                titleDiv.innerText = post.title;
+                                titleDiv.innerHTML = `<p>${post.title}</p>`;
                                 titleDiv.append(link)
                                 headTitleDiv.append(titleDiv)
                                 wrapperUser.appendChild(headTitleDiv)

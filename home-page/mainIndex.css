@@ -26,6 +26,7 @@ body{
     /*margin-left: 400px;*/
 }
 .user:hover{
+    transition: .2s;
     background-color: #f3e0e0;
 }
 
@@ -43,6 +44,7 @@ body{
     color: white
 }
 .link-block:hover{
+    transition: .1s;
     background-color: #b98484;;
     border-radius: 10px ;
 }
