@@ -3,7 +3,6 @@ function createPostInfo() {
   let jsonPost = url.searchParams.get('post');
     let parsePost = JSON.parse(jsonPost);
     const wrapper = document.getElementsByClassName('wrapper')[0];
-    // const h3 = document.getElementsByClassName('h3-post')[0];
     const postDiv = document.getElementsByClassName('post-info')[0];
     for (const item in parsePost) {
             const paragraphPost = document.createElement('p');
