@@ -25,8 +25,8 @@ body{
 .div-comment{
     padding: 20px 30px 20px 30px;
     box-sizing: border-box;
-    width: 600px;
-    height: 280px;
+    width: 300px;
+    height: 340px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -35,6 +35,11 @@ body{
     border-radius: 10px;
     background-color: #fff;
     margin: 10px;
+}
+.wrapper-comment{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .div-comment>p{
     margin: 5px;
