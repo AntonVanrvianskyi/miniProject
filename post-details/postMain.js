@@ -6,7 +6,6 @@ function createPostInfo() {
     const postDiv = document.getElementsByClassName('post-info')[0];
     for (const item in parsePost) {
             const paragraphPost = document.createElement('p');
-
             paragraphPost.innerHTML = `<b>${item}</b>: ${parsePost[item]}`
             postDiv.appendChild(paragraphPost);
 
